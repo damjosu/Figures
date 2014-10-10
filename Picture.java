@@ -18,14 +18,14 @@ public class Picture
     private Circle sun2;
     private Circle sun;
    
- 
+
 
     /**
      * Constructor for objects of class Picture
      */
     public Picture()
-    {
-        // nothing to do... instance variables are automatically set to null
+    {    
+       
     }
 
     /**
@@ -74,6 +74,15 @@ public class Picture
         sun.makeVisible();      
     }
 
+    /**
+     * Slowly move the circle vertically by 'distance' pixels.
+     */
+    public void slowMoveVertical()
+    {
+       sun.slowMoveVertical(80);
+    }
+
+   
     /**
      * Change this picture to black/white display
      */
