@@ -11,11 +11,10 @@
  */
 public class Picture
 {
-    private Circle campo;
+    private Circle floor;
     private Square wall;
     private Square window;
     private Triangle roof;
-    private Circle sun2;
     private Circle sun;
    
 
@@ -33,12 +32,12 @@ public class Picture
      */
     public void draw()
     {
-        campo = new Circle();
-        campo.moveVertical(160);
-        campo.moveHorizontal(-480);
-        campo.changeSize(1000);
-        campo.changeColor("green");
-        campo.makeVisible();
+        floor = new Circle();
+        floor.moveVertical(160);
+        floor.moveHorizontal(-480);
+        floor.changeSize(1000);
+        floor.changeColor("green");
+        floor.makeVisible();
         
         wall = new Square();
         wall.moveHorizontal(-140);
@@ -57,14 +56,7 @@ public class Picture
         roof.changeSize(60, 180);
         roof.moveHorizontal(20);
         roof.moveVertical(-60);
-        roof.makeVisible();
-        
-        sun2 = new Circle();
-        sun2.changeColor("green");
-        sun2.moveHorizontal(-100);
-        sun2.moveVertical(-40);
-        sun2.changeSize(80);
-        sun2.makeVisible();      
+        roof.makeVisible();            
         
         sun = new Circle();
         sun.changeColor("blue");
@@ -77,10 +69,14 @@ public class Picture
     /**
      * Slowly move the circle vertically by 'distance' pixels.
      */
-    public void slowMoveVertical()
+    public void slowMoveSun()
     {
        sun.slowMoveVertical(80);
-    }
+       wall.changeColor("black");
+       window.changeColor("white");       
+       roof.changeColor("black");
+       floor.changeColor("black");
+          }
 
    
     /**
@@ -91,8 +87,7 @@ public class Picture
         if (wall != null)   // only if it's painted already...
         {
             wall.changeColor("black");
-            window.changeColor("white");
-            roof.changeColor("black");
+                        roof.changeColor("black");
             sun.changeColor("black");
         }
     }
