@@ -16,6 +16,7 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Person man;
    
 
 
@@ -76,8 +77,19 @@ public class Picture
        window.changeColor("white");       
        roof.changeColor("black");
        floor.changeColor("black");
-          }
-
+       sun.changeColor("black");
+    }
+    
+    /**
+     * Slowly move the person vertically by 'distance' pixels.
+     */
+    public void slowMoveMan()
+    {
+       man = new Person();
+       man.makeVisible();
+       man.moveHorizontal (-200);
+       man.slowMoveHorizontal (60);      
+    }
    
     /**
      * Change this picture to black/white display
